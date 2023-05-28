@@ -1,0 +1,44 @@
+.p-paging {
+	max-width: $base-width;
+	padding: unit(2) 0;
+
+	li {
+		width: 110px;
+		height: 29px;
+
+		a {
+			display: block;
+			width: 100%;
+
+			@include textFactory(1.6rem,$theme1,"bold",2.8rem);
+		}
+	}
+
+	&__back {
+
+		@include responsive($res1040) {
+
+			padding-left: 32px;
+		}
+
+		a {
+
+			@include respBG("images/back.gif","l",28px,40px);
+		}
+	}
+
+
+	&__next {
+
+		@include responsive($res1040) {
+
+			padding-right: 32px;
+		}
+
+		a {
+
+			@include respBG("images/next.gif","r",28px,40px);
+			text-align: right;
+		}
+	}
+}

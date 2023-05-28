@@ -1,0 +1,73 @@
+.p-h {
+
+	&__page {
+
+		max-width: $base-width;
+		padding: 51px 0 0 262px;
+		letter-spacing: 0.4rem;
+
+		@include text-shadow(4px,0.5);
+
+		@include responsive($res520) {
+
+			@include text-shadow(6px,0.9);
+			padding: 46px 0 0 133px;
+			line-height: 3.6rem;
+		}
+	}
+
+	&__article {
+
+		display: inline-block;
+		background-image: url(images/h_cloud.gif), url(images/h_cloud.gif);
+		background-repeat: no-repeat, no-repeat;
+		background-position: top left, bottom right;
+		padding: 0 60px;
+		letter-spacing: 0.2rem;
+		line-height: 2.5rem;
+
+		&__ls0 {
+
+			@extend .p-h__article;
+
+			@include responsive($res715) {
+
+				letter-spacing: 0.1rem;
+			}
+		}
+	}
+
+	&__content1 {
+
+		letter-spacing: 0.4rem;
+		margin-bottom: unit(1);
+
+		@include responsive($res715) {
+
+			margin-bottom: 1.6rem;
+		}
+	}
+
+	&__content2 {
+
+		@include respBG("images/title-header-cloud.gif","l",28px,53px);
+
+		letter-spacing: 0.4rem;
+		margin: unit(2) 0 unit(1) 0;
+	}
+
+	&__lv1 {
+		letter-spacing: 0.4rem;
+		padding: unit(1) 0 0 0;
+	}
+
+	&__timestamp {
+		display: block;
+		margin-bottom: unit(1);
+		letter-spacing: 0.2rem;
+		height: 2.8rem;
+
+		@include textFactory(1.6rem,$theme3,"bold",2.8rem);
+	}
+}
+

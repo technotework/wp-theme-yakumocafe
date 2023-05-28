@@ -1,0 +1,64 @@
+.p-aside-wrapper {
+
+	position: absolute;
+	top: 280px;
+	left: 0;
+	width: 46px;
+	opacity: 0;
+	pointer-events: none;
+
+	&__top {
+
+		@extend .p-aside-wrapper;
+		top: 880px;
+	}
+
+}
+
+.p-aside {
+
+
+	@include responsive($res1040) {
+
+		display: none;
+	}
+
+
+	position: sticky;
+	pointer-events: auto;
+	top: 50px;
+	left: 0;
+	width: 46px;
+	height: 397px;
+	overflow: hidden;
+	border-radius: 0 $radius $radius 0;
+
+	background-image: url(images/aside-info.png);
+	background-position: 7px 163px;
+	background-repeat: no-repeat;
+	background-color: $theme1;
+	background-size: 67%;
+}
+
+.p-aside-nav {
+
+	ul > li:first-child {
+		margin-bottom: 62px;
+	}
+
+	&__info {
+		display: block;
+		width: 46px;
+		height: 166px;
+		background-color: $theme2;
+	}
+
+	&__sns {
+		display: block;
+		width: 28px;
+		height: 38px;
+		overflow: hidden;
+		margin-left: 8px;
+	}
+
+}

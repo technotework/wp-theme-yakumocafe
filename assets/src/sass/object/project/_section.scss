@@ -1,0 +1,26 @@
+
+.p-section {
+
+	@include responsive($res715) {
+
+		@include resMiniContainer;
+	}
+}
+
+.p-section__second {
+
+	@include responsive($res1040) {
+
+		padding: 0 32px;
+		margin: 0 auto;
+	}
+}
+
+.p-section__second2 {
+
+	@include responsive($res715) {
+
+		padding: 0 32px;
+		margin: 0 auto;
+	}
+}

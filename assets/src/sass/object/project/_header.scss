@@ -1,0 +1,231 @@
+/*========================
+* 下階層ヘッダ
+========================*/
+.p-header {
+
+	&__container {
+
+		width: 100%;
+		height: 56px;
+		background-color: $theme1;
+
+		@include responsive($res990) {
+			height: 12px;
+		}
+	}
+
+	&__contents {
+
+		position: relative;
+		max-width: $base-width;
+	}
+
+	&__logo {
+		position: absolute;
+		width: 146px;
+		height: 162px;
+		top: 0;
+		left: 46px;
+		z-index: 999999;
+		overflow: hidden;
+		border-radius: 0 0 10px 10px;
+
+		@include responsive($res990) {
+			width: 137px;
+			height: 151px;
+			top: 8px;
+		}
+
+		@include responsive($res520) {
+
+			width: 99px;
+			left: 16px;
+		}
+	}
+
+	&__badge {
+		position: absolute;
+		width: 87px;
+		height: 87px;
+		top: 18px;
+		right: 39px;
+
+		@include responsive($res990) {
+
+			top: 83px;
+		}
+
+		@include responsive($res715) {
+
+			right: 10px;
+		}
+
+		@include responsive($res520) {
+
+			width: 69px;
+			height: 69px;
+			top: 99px;
+			right: 10px;
+		}
+	}
+}
+
+
+.post-type-archive-event {
+
+	.p-header {
+
+		&__badge {
+
+			@include responsive($res520) {
+
+				width: 69px;
+				height: 69px;
+				top: 99px;
+				right: 10px;
+			}
+		}
+	}
+}
+
+
+.p-header-title {
+
+	width: 100%;
+	height: 139px;
+	background-image: url(images/second-header.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	@include responsive($res1040) {
+
+		background-size: 119%;
+		background-position: left top;
+	}
+
+	@include responsive($res990) {
+
+		background-size: 132%;
+		background-position: left top;
+	}
+
+	@include responsive($res670) {
+
+		background-size: 185%;
+		background-position: left top;
+	}
+}
+
+
+/*========================
+* ナビ
+========================*/
+
+.p-header-nav {
+
+	@include responsive($res990) {
+		display: none;
+	}
+
+	&__list {
+
+		width: 100%;
+		height: 56px;
+		padding-left: 204px;
+
+		> li {
+
+			position: relative;
+			margin: 0 20px 0 21px;
+
+			> a {
+
+				@include textFactory(1.4rem,$white,"regular",$space-unit);
+				letter-spacing: 0.1rem;
+
+			}
+
+			> a:hover {
+				color: #7d8d71;
+			}
+
+			::after {
+				position: absolute;
+				content: url(images/second_nav_point.gif);
+				top: -2px;
+				right: -25px;
+			}
+
+		}
+
+		> li.p-header-nav__list--is-current {
+
+			> a {
+				color: #7d8d71;
+			}
+		}
+
+		> li:last-child {
+
+			::after {
+				content: none;
+			}
+		}
+
+	}
+
+}
+
+/*========================
+* パンクズ
+========================*/
+
+.p-header-pan {
+
+	max-width: $base-width;
+
+	@include respBG("images/pankuzu-head.gif","l",21px,53px);
+
+	margin-top: unit(1);
+	margin-bottom: unit(1);
+
+	@include responsive($res1040) {
+		padding-left: 101px;
+		background-position: left 52px center;
+	}
+
+	@include responsive($res520) {
+		padding-left: 70px;
+		background-position: left 22px center;
+		margin-bottom: unit(1.25);
+
+	}
+
+	li {
+
+		a {
+
+			@include textFactory(1.4rem,$black,"bold",2.8rem);
+			letter-spacing: 0.1rem;
+		}
+
+		&::after {
+			content: ">";
+			margin: 0 10px;
+		}
+
+		&:last-child {
+
+			a {
+				color: $theme3;
+			}
+
+			&::after {
+				content: "";
+			}
+		}
+	}
+
+
+}

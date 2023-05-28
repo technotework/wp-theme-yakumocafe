@@ -1,0 +1,281 @@
+.p-reserve-tel {
+
+	&__info {
+		width: 330px;
+		font-weight: 700;
+		border-bottom: solid 1px $gray1;
+		margin: unit(2) 0 unit(3) 0;
+	}
+
+	&__info-label {
+		display: inline-block;
+		margin-right: 20px;
+		font-size: 1.6rem;
+		line-height: 5.6rem;
+	}
+
+	&__info-number {
+
+		a {
+			font-size: 2.1rem;
+			color: $black;
+			line-height: 5.6rem;
+		}
+	}
+
+}
+
+.p-reserve-web {
+
+	&__system {
+		margin-top: unit(3);
+	}
+
+	&__calendar {
+
+		position: relative;
+		padding-bottom: unit(2);
+		font-weight: 700;
+
+		table {
+			width: 100%;
+		}
+
+		td {
+			text-align: center;
+			padding: 16px 0 11px 0;
+			overflow: hidden;
+			border-radius: $radius;
+		}
+
+		th {
+			padding: 2px 0;
+			background-color: #ebebeb;
+			border-right: solid 2px $white;
+			border-left: solid 2px $white;
+		}
+
+		caption {
+
+			font-weight: 700;
+			line-height: 5.6rem;
+			padding-bottom: unit(2);
+			letter-spacing: 0.3rem;
+		}
+
+		.calendar-daylink {
+			color: $theme1;
+		}
+
+		.monthly-next {
+
+			position: absolute;
+			top: 15px;
+			right: 0;
+			color: $gray1;
+
+			@include respBG("images/next.gif","r",28px,40px);
+			text-align: right;
+			letter-spacing: 0.2rem;
+
+			@include responsive($res670) {
+				top: 60px;
+			}
+
+
+			a {
+				color: $theme1;
+				font-weight: 700;
+			}
+		}
+
+		.monthly-prev {
+
+			position: absolute;
+			top: 15px;
+			left: 0;
+			color: $gray1;
+			letter-spacing: 0.2rem;
+
+			@include respBG("images/back.gif","l",28px,40px);
+
+			@include responsive($res670) {
+				top: 60px;
+			}
+
+
+			a {
+				color: $theme1;
+				font-weight: 700;
+			}
+		}
+
+		.day-box.no-day {
+			background-color: transparent;
+		}
+
+		.day-box.today {
+			background-color: #f1f9f2;
+		}
+	}
+
+	&__day-calendar {
+
+		padding-bottom: unit(2);
+
+		h5 {
+
+			@extend .c-h__lv1;
+			@extend .p-h__lv1;
+			padding-top: 0;
+			padding-bottom: unit(1);
+		}
+
+		p.day {
+			text-align: center;
+			font-weight: 700;
+		}
+	}
+
+	&__day-calendar-table {
+
+		@extend .u-center;
+		width: 80%;
+		margin-top: unit(1);
+
+		tr {
+
+			&:first-child {
+
+				th,
+				td {
+					background-color: #ebebeb;
+					border-right: solid 2px $white;
+					border-left: solid 2px $white;
+					padding: 0;
+				}
+			}
+		}
+
+		th.day-right,
+		td.day-right,
+		th.day-left,
+		td.day-left {
+			width: 50%;
+			border: none;
+			border-radius: 0;
+			padding: 12px 0;
+			text-align: center;
+			border-bottom: solid 1px #ebebeb;
+			border-right: solid 2px $white;
+			border-left: solid 2px $white;
+
+			a {
+				color: $theme1;
+				font-weight: 700;
+			}
+		}
+
+
+	}
+
+}
+
+
+.reserve-form {
+
+	margin-top: unit(2);
+
+	&__forms {
+
+		table {
+			width: 100%;
+			margin-bottom: 41px;
+
+
+			tr {
+
+				&:last-child {
+
+					th,
+					td {
+						border-bottom: none;
+					}
+				}
+
+				&:first-child {
+
+					th,
+					td {
+						padding-top: 0;
+					}
+				}
+			}
+
+			th {
+				width: 15%;
+
+				@include responsive($res950) {
+					width: 35%;
+				}
+			}
+
+			td {
+				width: 85%;
+
+				@include responsive($res950) {
+					width: 65%;
+				}
+			}
+
+			th,
+			td {
+
+				padding: 13px 0;
+				text-align: left;
+				vertical-align: top;
+				border-bottom: solid 1px #ebebeb;
+				border-right: solid 2px $white;
+				border-left: solid 2px $white;
+			}
+
+			input {
+
+				border: solid 1px $gray1;
+				padding: 4px;
+				height: 28px;
+			}
+
+			textarea {
+				border: solid 1px $gray1;
+				padding: 4px;
+			}
+
+			.error-message {
+				color: $error;
+				padding-top: 5px;
+				font-weight: normal;
+			}
+		}
+	}
+
+	.error-box {
+
+		text-align: center;
+		padding-bottom: unit(2);
+	}
+
+	.required {
+		padding-bottom: unit(1);
+	}
+}
+
+.p-reserve-thanks {
+
+	text-align: center;
+	padding: unit(2) 0 unit(3) 0;
+
+	p {
+		padding-bottom: unit(1);
+	}
+}

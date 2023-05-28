@@ -1,0 +1,310 @@
+/*=====================================
+CONST
+=====================================*/
+
+/*=========================
+layout
+=========================*/
+
+$base-width:1024px;
+$space-unit:2.8rem;
+$break_tablet: 768px;
+$break_mobile: 559px;
+$break_br:768px;
+$footer_height:353px;
+$footer_height_top:340px;
+
+/*=========================
+font
+=========================*/
+$base-fsize: 62.5%;
+$f-main: 1.6rem;
+$f-caption: 1.6rem;
+$f-caption-space:0.5rem;
+$line-height: 1.75;
+
+/*=========================
+color
+=========================*/
+$black: #252525;
+$white: #fff;
+$trans: transparent;
+
+$base1: $white;
+$theme1:#224a05;
+$theme2:#3f6125;
+$theme3:#96e5e4;
+$theme4:#1b585d;
+$theme5:#365d1b;
+$gray1:#d1d1d1;
+$error:#800c0c;
+$text:$black;
+$text2:#545454;
+
+$link: $theme3;
+
+
+/*=========================
+radius
+=========================*/
+$radius: 5px;
+
+/*=========================
+p
+=========================*/
+$p-base-text-align:justify;
+$p-spacing:0.2rem;
+
+
+/*=========================
+button
+=========================*/
+$button-padding: 5px 15px;
+$button-padding-ie:13px 15px 3px 15px;
+$button-side-margin: 4px;
+$button-radius: $radius;
+$button-fs:1.6rem;
+$button-spacing:0.01rem;
+$button-text:$white;
+$primary:#224a05;
+$primary-ov:#356e08;
+$secondary:#8d8d8d;
+$secondary-ov:#afafaf;
+$alt1:#1b585d;
+$alt1-ov:#2f898f;
+
+
+/*=========================
+見出し設定
+=========================*/
+
+@mixin h-page {
+
+	@include textFactory(2.9rem,$white,"bold",$space-unit);
+}
+
+@mixin h-article {
+
+	@include textFactory(2.2rem,$black,"bold",$space-unit);
+}
+
+@mixin h-content1 {
+
+	@include textFactory(2rem,$theme1,"bold",$space-unit);
+}
+
+@mixin h-content2 {
+
+	@include textFactory(1.8rem,$black,"bold",$space-unit);
+}
+
+@mixin h-lv1 {
+
+	@include textFactory(1.8rem,$black,"bold",$space-unit);
+}
+
+/*=====================================
+mixins
+=====================================*/
+
+/*=========================
+font mixins
+=========================*/
+@mixin base {
+
+	@include ff;
+	@include textFactory($f-main, $text, "regular", 2.8rem);
+	@include containerFactory($base1, 0, 0 0 0 0);
+	font-feature-settings: "palt" 1;
+
+	min-height: 100vh;
+
+	padding-bottom: 352px;
+
+	@include responsive($res520) {
+
+		padding-bottom: 251px;
+	}
+}
+
+@mixin ff {
+	font-family:
+		fot-tsukubrdgothic-std,
+		"HiraginoSans-W3",
+		"Hiragino Kaku Gothic ProN",
+		"Hiragino Kaku Gothic Pro",
+		"游ゴシック Medium",
+		YuGothic,
+		YuGothicM,
+		"メイリオ",
+		Meiryo,
+		sans-serif;
+}
+
+@mixin ff2 {
+	font-family:
+		"HiraginoSans-W3",
+		"Hiragino Kaku Gothic ProN",
+		"Hiragino Kaku Gothic Pro",
+		"游ゴシック Medium",
+		YuGothic,
+		YuGothicM,
+		"メイリオ",
+		Meiryo,
+		sans-serif;
+}
+
+@mixin ffie {
+	font-family:
+		"メイリオ",
+		Meiryo,
+		serif;
+}
+
+@mixin heavy {
+	font-weight: 900;
+	font-style: normal;
+}
+
+@mixin bold {
+	font-weight: 700;
+	font-style: normal;
+}
+
+@mixin medium {
+	font-weight: 500;
+	font-style: normal;
+}
+
+@mixin regular {
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin en {
+	font-family: jaf-mashine, sans-serif;
+	font-weight: 600;
+	font-style: normal;
+}
+
+/*=================================
+Base Layout Vars
+=================================*/
+
+$res1040: 1040px;
+$res990: 990px;
+$res950: 950px;
+$res800: 800px;
+$res715: 715px;
+$res670: 670px;
+$res520: 520px;
+
+
+@mixin responsive($w) {
+
+	@media screen and (max-width: $w) {
+		@content;
+	}
+}
+
+@mixin resMiniContainer {
+
+	margin: 0 32px;
+}
+
+//space
+@function unit($num) {
+
+	@return $num * $space-unit;
+}
+
+//行の頭と合わせたい時に文字上部のline-height分だけずらず
+@function headshift($fs) {
+
+	@return ($space-unit - $fs)/2;
+}
+
+//アイコンワンポイント背景共通
+@mixin respBG($url,$direction,$size,$p) {
+
+	background-image: url($url);
+	background-size: auto $size;
+	background-repeat: no-repeat;
+
+	@if $direction == "l" {
+
+		background-position: left center;
+		padding-left: $p;
+	}
+
+	@if $direction == "lt" {
+
+		background-position: left top;
+		padding-left: $p;
+	}
+
+	@if $direction == "r" {
+
+		background-position: right center;
+		padding-right: $p;
+	}
+}
+
+/*=========================
+factory関数
+=========================*/
+
+@mixin textFactory($f, $c, $style, $line) {
+	font-size: $f;
+	color: $c;
+	line-height: $line;
+
+	@if $style == "heavy" {
+
+		@include heavy;
+	}
+
+	@if $style == "bold" {
+
+		@include bold;
+	}
+
+	@if $style == "medium" {
+
+		@include medium;
+	}
+
+	@if $style == "regular" {
+
+		@include regular;
+	}
+
+	@if $style == "en" {
+
+		@include en;
+	}
+}
+
+@mixin containerFactory($c, $r, $p) {
+	background-color: $c;
+	border-radius: $r;
+	padding: $p;
+}
+
+/*=========================
+shadow
+=========================*/
+
+@mixin shadow($length,$opacity) {
+	box-shadow: 0 0 $length rgba(0, 0, 0, $opacity);
+}
+
+@mixin text-shadow($length,$opacity) {
+	text-shadow: 0 0 $length rgba(0, 0, 0, $opacity);
+}
+
+
+@mixin inner-shadow($blur,$opacity) {
+
+	box-shadow: 0 0 $blur 0 rgba(0, 0, 0, $opacity) inset;
+}

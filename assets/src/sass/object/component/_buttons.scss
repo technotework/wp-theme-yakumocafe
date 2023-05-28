@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+.c-button {
+	display: inline-block;
+	padding: $button-padding;
+	border-radius: $button-radius;
+	text-align: center;
+	font-weight: bold;
+	color: $button-text;
+	text-decoration: none;
+	font-size: $button-fs;
+	letter-spacing: $button-spacing;
+	margin: 0 $button-side-margin;
+}
+
+
+.c-button__primary {
+
+	@extend .c-button;
+	background-color: $primary;
+
+	&:hover {
+		background-color: $primary-ov;
+	}
+}
+
+.c-button__secondary {
+
+	@extend .c-button;
+	background-color: $secondary;
+
+	&:hover {
+		background-color: $secondary-ov;
+	}
+}
+
+.c-button__alt1 {
+
+	@extend .c-button;
+	background-color: $alt1;
+
+	&:hover {
+		background-color: $alt1-ov;
+	}
+}
+
+.c-button__text {
+
+	color: $link;
+
+	&:hover {
+		color: $link;
+	}
+
+	&:visited {
+		color: $link;
+	}
+
+	&:active {
+		color: $link;
+	}
+}

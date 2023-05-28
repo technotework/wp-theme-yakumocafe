@@ -1,0 +1,61 @@
+.p-content-menulist-item {
+
+	margin-bottom: unit(2);
+
+	> section {
+
+		@include responsive($res715) {
+
+			display: block;
+		}
+	}
+
+	&__fig {
+		width: 232px;
+		height: 166px;
+		overflow: hidden;
+		border-radius: $radius;
+		margin-right: 36px;
+		line-height: 0;
+
+		@include responsive($res1040) {
+
+			width: 372px;
+			height: 266px;
+		}
+
+		@include responsive($res715) {
+
+			width: 100%;
+			height: auto;
+			margin-bottom: 1.6rem;
+		}
+	}
+
+	&__description {
+
+		min-width: 214px;
+		flex: 1;
+
+		@include responsive($res1040) {
+			width: auto;
+		}
+	}
+
+}
+
+
+.p-content-menu {
+
+	max-width: $base-width;
+	margin: unit(2) 0;
+
+	&__caption {
+
+		display: block;
+		max-width: $base-width;
+		line-height: 2.8rem;
+		text-align: right;
+		padding-bottom: unit(3);
+	}
+}

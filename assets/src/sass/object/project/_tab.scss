@@ -1,0 +1,47 @@
+.p-tab {
+
+	margin: unit(2) 0;
+
+	@include responsive($res715) {
+
+		margin: unit(2) 0 unit(1) 0;
+	}
+
+	> ul {
+
+		@include responsive($res715) {
+
+			display: block;
+			width: 144px;
+			margin: 0 auto;
+		}
+	}
+
+	&__item {
+
+		width: 144px;
+		height: unit(2);
+		text-align: center;
+		margin: 0 16px;
+
+		@include textFactory(1.6rem,$black,"bold",2.8rem);
+		letter-spacing: 0.3rem;
+		cursor: pointer;
+		user-select: none;
+
+		@include responsive($res715) {
+
+			margin: 0;
+		}
+	}
+
+}
+
+.is-tab-current {
+
+	background-image: url(images/tab.gif);
+	background-position: center unit(1);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	color: $theme1;
+}

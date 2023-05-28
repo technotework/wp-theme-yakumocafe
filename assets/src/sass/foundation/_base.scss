@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+/*
+* foundation/_base.scss
+*/
+html {
+	font-size: $base-fsize;
+	position: relative;
+}
+
+
+body {
+
+	@include base;
+}
+
+_:-ms-input-placeholder,
+:root body {
+
+	@include ffie;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+img {
+	backface-visibility: hidden;
+}
+
+button:focus {
+	outline: 0;
+}
+
+address {
+	display: inline;
+	text-decoration: none;
+	font-style: normal;
+}
+
+#grid {
+	width: 100%;
+	height: 6000px;
+	opacity: 0.1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-image: url(images/grid.png);
+	pointer-events: none;
+
+	&.top {
+		top: 12px;
+	}
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+
+	text-decoration: none;
+	cursor: pointer !important;
+}
+
+br.mob {
+
+	display: none;
+
+	@include responsive($res520) {
+		display: inline;
+	}
+}
+
+br.pc {
+
+	display: inline;
+
+	@include responsive($res520) {
+		display: none;
+	}
+}
